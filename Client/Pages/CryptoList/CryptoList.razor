@@ -1,0 +1,15 @@
+﻿@page "/cryptocurrencylist"
+@using TestBlazor.Components.GridTable
+@using TestBlazor.Shared
+@inherits CryptoListBase
+
+<PageTitle>Cryptocurrency Listing</PageTitle>
+
+<h1>Cryptocurrency Listing</h1>
+
+@*Loading reusable table component with parameter*@
+<GridTable Items="cryptocurrencyListingService.CryptoList"></GridTable>
+
+<button class="btn btn-primary" @onclick="RefreshList">Refresh</button>
+
+

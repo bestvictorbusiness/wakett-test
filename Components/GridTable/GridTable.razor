@@ -1,0 +1,34 @@
+﻿@inherits GridTableBase
+
+@if (Items == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Last Updated</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Total Supply</th>
+                <th>Max Supply</th>
+                <th>USD Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var crypto in Items)
+            {
+                <tr>
+                    <td>@crypto.LastUpdated.ToShortDateString()</td>
+                    <td>@crypto.Name</td>
+                    <td>@crypto.Symbol</td>
+                    <td>@crypto.TotalSupply</td>
+                    <td>@crypto.MaxSupply</td>
+                    <td>@crypto.USD</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
